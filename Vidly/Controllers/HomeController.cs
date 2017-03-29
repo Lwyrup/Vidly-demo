@@ -9,6 +9,7 @@ namespace Vidly.Controllers
 {
 	public class HomeController : Controller
 	{
+		// / | /home
 		public ActionResult Index()
 		{
 			var mvcName = typeof(Controller).Assembly.GetName();
@@ -19,5 +20,10 @@ namespace Vidly.Controllers
 
 			return View();
 		}
+
+		// /about
+
+		// /help
+
 	}
 }

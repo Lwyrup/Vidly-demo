@@ -22,8 +22,16 @@ namespace Vidly.Controllers
 		}
 
 		// /about
+		public ActionResult About()
+		{
+			return View("About");
+		}
 
-		// /help
+		// /faq
+		public ActionResult Faq()
+		{
+			return View("Faq");
+		}
 
 	}
 }

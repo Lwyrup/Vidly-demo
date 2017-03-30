@@ -14,6 +14,8 @@ namespace Vidly
 			*  /users/{id}
 			*/
 
+			// "{controller}/{id}"
+
 			/* Deafult maps the following paths
 			*  /
 			*  /home

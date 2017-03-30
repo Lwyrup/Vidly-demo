@@ -12,7 +12,7 @@ namespace Vidly.Controllers
 		// / | /home
 		public ActionResult Index()
 		{
-			return View("Home");
+			return View("Index");
 		}
 
 		// /about

@@ -1,7 +1,32 @@
-﻿@{
+﻿@model Vidly.ViewModels.MoviesViewModel
+@{
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>All Movies</h2>
 
+<!-- id-->
+@if ( @Model.CurrentId != null )
+{
+	foreach ( var movie in Model.Movies )
+	{
+		if ( movie.Id == @Model.CurrentId )
+		{
+			<h2>@movie.Name</h2>
+			<small>@movie.Category</small>
+			<p>@movie.Description</p>
+		}
+	}
+}
+else
+{
+	<h2>All Movies</h2>
+
+	foreach ( var movie in Model.Movies )
+	{
+		<a href=@String.Format("/movies/{0}", movie.Id)>
+			<h3>@movie.Name</h3>
+		</a>
+		<p>Categeory - @movie.Category</p>
+	}
+}

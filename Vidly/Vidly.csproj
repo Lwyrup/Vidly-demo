@@ -66,6 +66,7 @@
     <Folder Include="Scripts\" />
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\Movies\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -75,6 +76,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="ViewModels\MoviesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -102,7 +105,7 @@
     <Content Include="Views\Home\Faq.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
     <Content Include="Views\Partials\Header.cshtml" />
-    <Content Include="Views\Movies\All.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-1.9.1.min.map" />

@@ -13,6 +13,11 @@ namespace Vidly
 			*  /movies/{id}
 			*  /users/{id}
 			*/
+			routes.MapRoute(
+				name: "Movies",
+				url: "Movies/{id}",
+				defaults: new { controller = "Movies", action = "Index", id = UrlParameter.Optional }
+			);
 
 			// "{controller}/{id}"
 

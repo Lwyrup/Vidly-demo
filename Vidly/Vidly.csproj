@@ -67,6 +67,7 @@
     <Folder Include="Views\Partials\" />
     <Folder Include="Views\Movies\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="FakeDatabase\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />

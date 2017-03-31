@@ -8,7 +8,7 @@ namespace Vidly.ViewModels
 {
 	public class MoviesViewModel
 	{
-		public List<Movie> Movies { get; set; }
-		public int? CurrentId { get; set; }
+		public List<Movie> Movies  { get; set; }
+		public int? CurrentMovieId { get; set; }
 	}
 }

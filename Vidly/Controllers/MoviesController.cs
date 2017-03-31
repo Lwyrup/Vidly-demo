@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 using Vidly.Models;
 using Vidly.ViewModels;
+using Vidly.Helpers;
 
 namespace Vidly.Controllers
 {
@@ -14,19 +15,14 @@ namespace Vidly.Controllers
 		// /movies/{name?}
 		public ActionResult Index(int? id)
 		{
-			var movies = new List<Movie>
-			{
-				new Movie() { Id = 1, Name = "Shrek", Category = "Kids" },
-				new Movie() { Id = 2, Name = "Heat", Category = "Crime" },
-				new Movie() { Id = 3, Name = "Django", Category = "Western" },
-				new Movie() { Id = 4, Name = "Kung Fury", Category = "Action" },
-				new Movie() { Id = 5, Name = "Hateful Eight", Category = "Western" },
-			};
+			// Get all the movies / or if and id is present, just that movie
+			var result = MoviesHelper.GetMovies(id);
 
+			// Insert the result into the view model
 			var viewModel = new MoviesViewModel
 			{
-				Movies = movies,
-				CurrentId = id
+				Movies = result,
+				CurrentMovieId = id
 			};
 
 			return View(viewModel);

@@ -9,18 +9,6 @@ namespace Vidly
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-			/* maps the following paths
-			*  /movies/{id}
-			*  /users/{id}
-			*/
-			routes.MapRoute(
-				name: "Movies",
-				url: "movies/{id}",
-				defaults: new { controller = "Movies", action = "Index", id = UrlParameter.Optional }
-			);
-
-			// "{controller}/{id}"
-
 			/* Deafult maps the following paths
 			*  /
 			*  /home

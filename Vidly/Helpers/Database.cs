@@ -52,7 +52,7 @@ namespace Vidly.Helpers
 		// Gets Movies from the 'Database' *wink wink*
 		//
 		// returns List of Movies
-		public static List<Movie> GetMovies( int? filter)
+		public static List<Movie> GetMovies()
 		{
 			var movies = new List<Movie>
 			{
@@ -62,7 +62,8 @@ namespace Vidly.Helpers
 				new Movie() { Id = 4, Name = "Kung Fury", Category = "Action" },
 				new Movie() { Id = 5, Name = "Hateful Eight", Category = "Western" },
 			};
-			return CheckforId( movies, filter );
+			//return CheckforId( movies, filter );
+			return movies;
 		}
 	}
 }

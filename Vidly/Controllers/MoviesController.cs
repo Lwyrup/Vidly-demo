@@ -24,5 +24,12 @@ namespace Vidly.Controllers
 			var result = Movie.ById(id);
 			return View(result);
 		}
+
+		public ActionResult Search()
+		{
+			var result = Movie.Search(Request.Params);
+			var viewModel = new MoviesViewModel { Movies = result };
+			return View("Index", viewModel);
+		}
     }
 }

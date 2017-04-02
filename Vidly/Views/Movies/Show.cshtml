@@ -1,7 +1,11 @@
-﻿@{
-    ViewBag.Title = "Show";
+﻿@model Vidly.Models.Movie
+@{
+    ViewBag.Title = Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Show</h2>
 
+<a href='javascript:history.go(-1)'>Go Back to Previous Page</a>
+<h1>@Model.Name</h1>
+<small>Categeory: @Model.Category </small>
+<p>@Model.Description</p>

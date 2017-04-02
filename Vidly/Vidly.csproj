@@ -109,6 +109,7 @@
     <Content Include="Views\Partials\Header.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Show.cshtml" />
+    <Content Include="Views\Partials\SearchBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-1.9.1.min.map" />

@@ -4,24 +4,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!-- Single item rendering -->
-@if (Model.CurrentMovieId != null)
+@if (String.IsNullOrEmpty(Request.Params["categeory"]))
 {
+	<form action="/movies">
+		<input type="text" placeholder="Categeory" name="categeory">
+		<button>Search</button>
+	</form>
 	foreach ( var movie in Model.Movies )
 	{
-		<a href='/movies/'>Back</a>
-		<h1>@movie.Name</h1>
-		<small>Categeory: @movie.Category </small>
-		<p>@movie.Description</p>
+		<h1>@Html.ActionLink(movie.Name, String.Format("/Show/{0}", movie.Id))</h1>
+		<p>Categeory: @movie.Category</p>
 	}
 }
-
-<!-- Single item rendering -->
-@if (Model.CurrentMovieId == null)
-{
+else{
+	<h3>Searching by @Request.Params["categeory"]</h3>
+	<a href="/movies">Clear search</a>
 	foreach ( var movie in Model.Movies )
 	{
-		<h1>@Html.ActionLink(movie.Name, String.Format("/{0}", movie.Id))</h1>
-		<p>Categeory: @movie.Category</p>
+		if (movie.Category.ToLowerInvariant() == Request.Params["categeory"].ToLowerInvariant())
+		{
+			<h1>@Html.ActionLink(movie.Name, String.Format("/Show/{0}", movie.Id))</h1>
+			<p>Categeory: @movie.Category</p>
+		}
 	}
 }

@@ -3,28 +3,21 @@
     ViewBag.Title = "Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Html.Partial("~/Views/Partials/SearchBar.cshtml")
 
-@if (String.IsNullOrEmpty(Request.Params["categeory"]))
+@if (!String.IsNullOrEmpty(Request.Params["value"]))
 {
-	<form action="/movies">
-		<input type="text" placeholder="Categeory" name="categeory">
-		<button>Search</button>
-	</form>
-	foreach ( var movie in Model.Movies )
-	{
-		<h1>@Html.ActionLink(movie.Name, String.Format("/Show/{0}", movie.Id))</h1>
-		<p>Categeory: @movie.Category</p>
-	}
-}
-else{
-	<h3>Searching by @Request.Params["categeory"]</h3>
+	<h3>Searching @(Request.Params["searchBy"]) for @Request.Params["value"]</h3>
 	<a href="/movies">Clear search</a>
-	foreach ( var movie in Model.Movies )
-	{
-		if (movie.Category.ToLowerInvariant() == Request.Params["categeory"].ToLowerInvariant())
-		{
-			<h1>@Html.ActionLink(movie.Name, String.Format("/Show/{0}", movie.Id))</h1>
-			<p>Categeory: @movie.Category</p>
-		}
-	}
+}
+
+@if (Model.Movies.Count < 1)
+{
+	<p>No movie found :(</p>
+}
+
+@foreach ( var movie in Model.Movies )
+{
+	<h1>@Html.ActionLink(movie.Name, String.Format("/Show/{0}", movie.Id))</h1>
+	<p>Categeory: @movie.Category</p>
 }

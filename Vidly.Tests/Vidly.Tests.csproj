@@ -71,14 +71,12 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\DatabaseTest.cs" />
-    <Compile Include="Models\MovieTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

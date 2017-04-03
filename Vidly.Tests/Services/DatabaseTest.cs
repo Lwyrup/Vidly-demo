@@ -24,7 +24,7 @@ namespace Vidly.Tests
 		public void AllWithFilter()
 		{
 			// Arrange
-			del filter = (item) => item.Category.ToLowerInvariant().Contains("west");
+			del filter = (item) => item[2].ToLowerInvariant().Contains("west");
 			// Act
 			var result = Database.AllWithFilter(filter);
 			//Assert
